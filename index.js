@@ -3,7 +3,9 @@ const app = express()
 const port = process.env.PORT
 
 app.get('/', (req, res) => {
-  res.send(Object.keys(process.env))
+  var dbconfig = require('opsworks');
+  res.send(Object.keys(dbconfig))
+  // res.send(Object.keys(process.env))
 })
 
 app.listen(port, () => {
